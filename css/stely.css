@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+header {
+  background-color: #262626;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.logo .red {
+  color: red;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.search-cart-login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-cart-login input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-cart-login .icon {
+  font-size: 20px;
+}
+
+.search-cart-login button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 30px;
+  gap: 30px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 55%;
+}
+
+.text-content h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.text-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}

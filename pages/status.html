@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/status.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script  type="text/javascript" src="../script/carinho.js"></script>
+    <script type="text/javascript" src="../script/menu.js"></script>
+    <title>Carrinho | Ecommercer </title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <div class="header-linear-content">
+            <h1 class="logo"> AutoPeças <span> Express </span></h1>
+            <nav>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+            
+                <li><a href="produtos.html">Produtos</a></li>
+            
+                <li><a href="">Entrar</a></li>
+                
+                  <li><a href="cadastro.html">Cadastro</a></li>
+                  </li>
+              </ul>
+            </nav>
+            
+            <div class="canto">
+                <figure class="perfil">
+                    <a href="perfil.php"><img src="../img/perfil (2).png" alt=""></a>
+                </figure>
+              <figure class="nav-icon-container">
+                <img src="../img/carrinho.png" alt="">
+              </figure>
+    
+              <figure>
+                <img onload="menu();" src="..//img/menu.png" alt="" class="menu-button">
+              </figure>
+            </div>
+          </div>
+    
+        </div>
+      </header>
+    
+<section class="status-area container">
+  
+  <!-- Coluna esquerda - Menu lateral -->
+  <aside class="status-col-esquerda">
+    <h3>Minha Conta</h3>
+    <ul>
+      <li><a href="minhas-compras.html"><i class="bi bi-cart4"></i> Minhas Compras</a></li>
+      <li><a href="pedidos-abertos.html"><i class="bi bi-hourglass-split"></i> Pedidos em Aberto</a></li>
+      <li><a href="pedidos-concluidos.html"><i class="bi bi-check-circle"></i> Pedidos Concluídos</a></li>
+    </ul>
+  </aside>
+
+  <!-- Coluna direita - Timeline -->
+  <div class="status-col-direita">
+    <h2>Status do Pedido</h2>
+
+    <div class="status-grid">
+      <div class="status-item ativo">
+        <i class="bi bi-bag-check"></i>
+        <p>Pedido Realizado</p>
+        <span>25/08/2025</span>
+      </div>
+
+      <div class="status-item ativo">
+        <i class="bi bi-box-seam"></i>
+        <p>Pedido Enviado</p>
+        <span>26/08/2025</span>
+      </div>
+
+      <div class="status-item">
+        <i class="bi bi-truck"></i>
+        <p>Em Transporte</p>
+        <span>27/08/2025</span>
+      </div>
+
+      <div class="status-item">
+        <i class="bi bi-house-door"></i>
+        <p>Entregue</p>
+        <span>—</span>
+      </div>
+    </div>
+
+    <!-- Botão rastreio centralizado -->
+    <div class="rastreio">
+      <button class="btn-rastreio" onclick="abrirRastreio()">Rastrear Pedido</button>
+    </div>
+  </div>
+
+</section>
+
+<script>
+function abrirRastreio(){
+  let rastreio = window.open("", "Rastreio", "width=400,height=300");
+  rastreio.document.write("<h2 style='font-family:sans-serif;color:#ff2134'>Rastreio</h2>");
+  rastreio.document.write("<p><strong>Código:</strong> BR123456789XYZ</p>");
+  rastreio.document.write("<p>Status atual: Em transporte para São Paulo/SP</p>");
+  rastreio.document.write("<p>Previsão de entrega: 29/08/2025</p>");
+}
+</script>
+
+ 
+    
+        <footer>
+            <div class="footer-superior-completa">
+                <div class="footer-superior-esquerdo">
+                    <h4>Institucional</h4>
+                    <ul>
+                    <li><a href="sobre.html">Sobre a empresa</a></li>
+                    <li><a href="lgpd.html">Política de Privacidade</a></li>
+                    <li><a href="">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-superior-meio">
+                <h4>Ajuda</h4>
+                <ul>
+                    <li><a href="">Fale Conosco/Suporte</a></li>
+                    <li><a href="">Trocas e Devoluções</a></li>
+                    <li><a href="">Formas de Pagamento</a></li>
+                    <li><a href="">Prazo de Entraga</a></li>
+                </ul>
+                </div>
+                <div class="footer-superior-direito">
+                    <h4>Contato</h4>
+                    <ul class="lista-contato">
+                        <li>Telefone:(11) 99999-9999</li>
+                        <li>Email: contato@autoexpress.com.br</li>
+                        <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+            <hr/>
+            <div class="footer-inferior-completa">
+                <div class="footer-inferior-esquerdo">
+                    <h4>Meios de pagamento:</h4>
+                    <figure class="image-pag">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png"
+                         alt="Visa" />
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png"  alt="Mastercard" />
+                        <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+    
+                    </figure>
+                </div>
+                <div class="footer-inferior-direito">
+                    <h4>Redes Sociais</h4>
+                    <div class="espacamento-icone-sociais">
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
+    
+                    </div>
+                </div>
+            </div>
+    
+           
+        </footer>
+    
+
+
+
+</body>
+</html>

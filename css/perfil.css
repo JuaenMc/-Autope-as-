@@ -1,0 +1,111 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container principal */
+main {
+    max-width: 900px;
+    background-color: #fff;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Foto de perfil */
+.foto-perfil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.foto-perfil img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e63946;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Fieldset */
+fieldset {
+    border: 2px solid #e63946;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+legend {
+    padding: 5px 15px;
+    background-color: #e63946;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Labels e Inputs */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e63946;
+}
+
+/* Botão padrão (se quiser colocar) */
+button {
+    padding: 12px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c52233;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    .foto-perfil img {
+        width: 100px;
+        height: 100px;
+    }
+}
