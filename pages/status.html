@@ -6,166 +6,211 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <script  type="text/javascript" src="../script/carinho.js"></script>
+    <script type="text/javascript" src="../script/carinho.js"></script>
     <script type="text/javascript" src="../script/menu.js"></script>
-    <title>Carrinho | Ecommercer </title>
+    <title>Status do Pedido | AutoPeças Express</title>
 </head>
 <body>
     <header>
         <div class="navbar">
-          <div class="header-linear-content">
-            <h1 class="logo"> AutoPeças <span> Express </span></h1>
-            <nav>
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-            
-                <li><a href="produtos.html">Produtos</a></li>
-            
-                <li><a href="">Entrar</a></li>
-                
-                  <li><a href="cadastro.html">Cadastro</a></li>
-                  </li>
-              </ul>
-            </nav>
-            
-            <div class="canto">
-                <figure class="perfil">
-                    <a href="perfil.php"><img src="../img/perfil (2).png" alt=""></a>
-                </figure>
-              <figure class="nav-icon-container">
-                <img src="../img/carrinho.png" alt="">
-              </figure>
-    
-              <figure>
-                <img onload="menu();" src="..//img/menu.png" alt="" class="menu-button">
-              </figure>
-            </div>
-          </div>
-    
-        </div>
-      </header>
-    
-<section class="status-area container">
-  
-  <!-- Coluna esquerda - Menu lateral -->
-  <aside class="status-col-esquerda">
-    <h3>Minha Conta</h3>
-    <ul>
-      <li><a href="minhas-compras.html"><i class="bi bi-cart4"></i> Minhas Compras</a></li>
-      <li><a href="pedidos-abertos.html"><i class="bi bi-hourglass-split"></i> Pedidos em Aberto</a></li>
-      <li><a href="pedidos-concluidos.html"><i class="bi bi-check-circle"></i> Pedidos Concluídos</a></li>
-    </ul>
-  </aside>
-
-  <!-- Coluna direita - Timeline -->
-  <div class="status-col-direita">
-    <h2>Status do Pedido</h2>
-
-    <div class="status-grid">
-      <div class="status-item ativo">
-        <i class="bi bi-bag-check"></i>
-        <p>Pedido Realizado</p>
-        <span>25/08/2025</span>
-      </div>
-
-      <div class="status-item ativo">
-        <i class="bi bi-box-seam"></i>
-        <p>Pedido Enviado</p>
-        <span>26/08/2025</span>
-      </div>
-
-      <div class="status-item">
-        <i class="bi bi-truck"></i>
-        <p>Em Transporte</p>
-        <span>27/08/2025</span>
-      </div>
-
-      <div class="status-item">
-        <i class="bi bi-house-door"></i>
-        <p>Entregue</p>
-        <span>—</span>
-      </div>
-    </div>
-
-    <!-- Botão rastreio centralizado -->
-    <div class="rastreio">
-      <button class="btn-rastreio" onclick="abrirRastreio()">Rastrear Pedido</button>
-    </div>
-  </div>
-
-</section>
-
-<script>
-function abrirRastreio(){
-  let rastreio = window.open("", "Rastreio", "width=400,height=300");
-  rastreio.document.write("<h2 style='font-family:sans-serif;color:#ff2134'>Rastreio</h2>");
-  rastreio.document.write("<p><strong>Código:</strong> BR123456789XYZ</p>");
-  rastreio.document.write("<p>Status atual: Em transporte para São Paulo/SP</p>");
-  rastreio.document.write("<p>Previsão de entrega: 29/08/2025</p>");
-}
-</script>
-
- 
-    
-        <footer>
-            <div class="footer-superior-completa">
-                <div class="footer-superior-esquerdo">
-                    <h4>Institucional</h4>
+            <div class="header-linear-content">
+                <h1 class="logo"> AutoPeças <span> Express </span></h1>
+                <nav>
                     <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="">Entrar</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="canto">
+                    <figure class="perfil">
+                        <a href="perfil.php"><img src="../img/perfil (2).png" alt="Perfil"></a>
+                    </figure>
+                    <figure class="nav-icon-container">
+                        <img src="../img/carrinho.png" alt="Carrinho">
+                    </figure>
+                    <figure>
+                        <img onload="menu();" src="../img/menu.png" alt="Menu" class="menu-button">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="status-area container">
+        <div class="status-filter-menu">
+            <button class="filter-btn" onclick="filtrarStatus('todos')">
+                <i class="bi bi-collection"></i> Todos
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('pagar')">
+                <i class="bi bi-wallet2"></i> Pendente
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('preparando')">
+                <i class="bi bi-box-seam"></i> Preparando
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('caminho')">
+                <i class="bi bi-truck"></i> A Caminho
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('finalizado')">
+                <i class="bi bi-check-circle"></i> Finalizado
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('cancelado')">
+                <i class="bi bi-x-circle"></i> Cancelado
+            </button>
+            <button class="filter-btn" onclick="filtrarStatus('reembolso')">
+                <i class="bi bi-arrow-counterclockwise"></i> Reembolso
+            </button>
+        </div>
+
+        <div class="pedidos-container">
+            <div class="pedido-item" data-status="pagar">
+                <h3>Pedido #1234</h3>
+                <p><strong>Produto:</strong> Kit de Pastilhas de Freio</p>
+                <p><strong>Data:</strong> 03/09/2025</p>
+                <p><strong>Valor:</strong> R$ 150,00</p>
+                <button class="btn-pagar">Pagar Agora</button>
+            </div>
+
+            <div class="pedido-item" data-status="preparando">
+                <h3>Pedido #1230</h3>
+                <p><strong>Produto:</strong> Filtro de Óleo</p>
+                <p><strong>Data:</strong> 02/09/2025</p>
+                <p><strong>Status:</strong> Pagamento aprovado, em preparação para envio.</p>
+            </div>
+
+            <div class="pedido-item" data-status="caminho">
+                <h3>Pedido #1225</h3>
+                <p><strong>Produto:</strong> Carrosas</p>
+                <button class="btn-rastreio" onclick="abrirModalRastreio('#1225', 'BR123456789BR')">
+                    Rastrear Pedido
+                </button>
+            </div>
+
+             <div class="pedido-item" data-status="finalizado">
+                <h3>Pedido #1220</h3>
+                <p><strong>Produto:</strong> Amortecedor Dianteiro</p>
+                <p><strong>Data:</strong> 15/08/2025</p>
+                <p><strong>Status:</strong> Entregue com sucesso!</p>
+            </div>
+
+            <div class="pedido-item" data-status="cancelado">
+                <h3>Pedido #1215</h3>
+                <p><strong>Produto:</strong> Kit Correia Dentada</p>
+                <p><strong>Data:</strong> 10/08/2025</p>
+                <p><strong>Status:</strong> Pedido cancelado pelo usuário.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-superior-completa">
+            <div class="footer-superior-esquerdo">
+                <h4>Institucional</h4>
+                <ul>
                     <li><a href="sobre.html">Sobre a empresa</a></li>
                     <li><a href="lgpd.html">Política de Privacidade</a></li>
                     <li><a href="">Termos de Uso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-superior-meio">
+                </ul>
+            </div>
+            <div class="footer-superior-meio">
                 <h4>Ajuda</h4>
                 <ul>
                     <li><a href="">Fale Conosco/Suporte</a></li>
                     <li><a href="">Trocas e Devoluções</a></li>
                     <li><a href="">Formas de Pagamento</a></li>
-                    <li><a href="">Prazo de Entraga</a></li>
+                    <li><a href="">Prazo de Entrega</a></li>
                 </ul>
-                </div>
-                <div class="footer-superior-direito">
-                    <h4>Contato</h4>
-                    <ul class="lista-contato">
-                        <li>Telefone:(11) 99999-9999</li>
-                        <li>Email: contato@autoexpress.com.br</li>
-                        <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-                    </ul>
+            </div>
+            <div class="footer-superior-direito">
+                <h4>Contato</h4>
+                <ul class="lista-contato">
+                    <li>Telefone:(11) 99999-9999</li>
+                    <li>Email: contato@autoexpress.com.br</li>
+                    <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+        <hr/>
+        <div class="footer-inferior-completa">
+            <div class="footer-inferior-esquerdo">
+                <h4>Meios de pagamento:</h4>
+                <figure class="image-pag">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                    <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+                </figure>
+            </div>
+            <div class="footer-inferior-direito">
+                <h4>Redes Sociais</h4>
+                <div class="espacamento-icone-sociais">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
                 </div>
             </div>
-            <hr/>
-            <div class="footer-inferior-completa">
-                <div class="footer-inferior-esquerdo">
-                    <h4>Meios de pagamento:</h4>
-                    <figure class="image-pag">
-                        <img src="https://img.icons8.com/color/48/000000/visa.png"
-                         alt="Visa" />
-                        <img src="https://img.icons8.com/color/48/000000/mastercard.png"  alt="Mastercard" />
-                        <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-    
-                    </figure>
-                </div>
-                <div class="footer-inferior-direito">
-                    <h4>Redes Sociais</h4>
-                    <div class="espacamento-icone-sociais">
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-    
-                    </div>
-                </div>
+        </div>
+    </footer>
+
+    <div id="modal-rastreio" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close" onclick="fecharModalRastreio()">&times;</span>
+            <h2><i class="bi bi-truck"></i> Status do Rastreio</h2>
+            <div id="info-rastreio">
+                <p><strong>Pedido:</strong> <span id="rastreio-pedido"></span></p>
+                <p><strong>Código:</strong> <span id="rastreio-codigo"></span></p>
+                <hr>
+                <ul>
+                    <li><strong>29/08/2025, 14:30:</strong> Objeto em trânsito - de São Paulo/SP para Rio de Janeiro/RJ</li>
+                    <li><strong>28/08/2025, 09:00:</strong> Objeto postado após o horário limite da agência</li>
+                    <li><strong>27/08/2025, 18:12:</strong> Objeto postado</li>
+                </ul>
             </div>
+        </div>
+    </div>
     
-           
-        </footer>
-    
+    <script>
+        // Função para filtrar os pedidos por status
+        function filtrarStatus(status) {
+            const todosPedidos = document.querySelectorAll('.pedido-item');
 
+            todosPedidos.forEach(pedido => {
+                if (status === 'todos' || pedido.getAttribute('data-status') === status) {
+                    pedido.style.display = 'block';
+                } else {
+                    pedido.style.display = 'none';
+                }
+            });
 
+            const todosBotoes = document.querySelectorAll('.filter-btn');
+            todosBotoes.forEach(btn => {
+                btn.classList.remove('ativo');
+            });
 
+            const botaoAtivo = document.querySelector(filter-btn[onclick="filtrarStatus('${status}')"]);
+            if (botaoAtivo) {
+                botaoAtivo.classList.add('ativo');
+            }
+        }
+
+        // Garante que a aba "Todos" comece ativa ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            filtrarStatus('todos');
+        });
+
+        // Funções para controlar o Modal de Rastreio
+        function abrirModalRastreio(numPedido, codRastreio) {
+            document.getElementById('rastreio-pedido').innerText = numPedido;
+            document.getElementById('rastreio-codigo').innerText = codRastreio;
+            document.getElementById('modal-rastreio').style.display = 'flex';
+        }
+
+        function fecharModalRastreio() {
+            document.getElementById('modal-rastreio').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
